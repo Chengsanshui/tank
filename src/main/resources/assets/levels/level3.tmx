@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="28" height="28" tilewidth="24" tileheight="24" infinite="0" nextlayerid="4" nextobjectid="626">
+ <tileset firstgid="1" name="maptitles" tilewidth="24" tileheight="24" tilecount="9" columns="9">
+  <image source="maptitles.png" width="216" height="24"/>
+ </tileset>
+ <tileset firstgid="10" name="flag" tilewidth="48" tileheight="48" tilecount="1" columns="1">
+  <image source="flag.png" width="48" height="48"/>
+ </tileset>
+ <objectgroup id="2" name="objLayout">
+  <object id="153" type="borderWall" x="0" y="0" width="672" height="24"/>
+  <object id="154" type="borderWall" x="648" y="24" width="24" height="648"/>
+  <object id="155" type="borderWall" x="0" y="648" width="648" height="24"/>
+  <object id="156" type="borderWall" x="0" y="24" width="24" height="624"/>
+  <object id="451" type="flag" gid="10" x="312" y="648" width="48" height="48"/>
+  <object id="452" type="brick" gid="1" x="288" y="600" width="24" height="24"/>
+  <object id="453" type="brick" gid="1" x="312" y="600" width="24" height="24"/>
+  <object id="454" type="brick" gid="1" x="336" y="600" width="24" height="24"/>
+  <object id="455" type="brick" gid="1" x="360" y="600" width="24" height="24"/>
+  <object id="456" type="brick" gid="1" x="360" y="624" width="24" height="24"/>
+  <object id="457" type="brick" gid="1" x="360" y="648" width="24" height="24"/>
+  <object id="458" type="brick" gid="1" x="288" y="624" width="24" height="24"/>
+  <object id="459" type="brick" gid="1" x="288" y="648" width="24" height="24"/>
+  <object id="464" type="brick" gid="1" x="72" y="168" width="24" height="24"/>
+  <object id="465" type="brick" gid="1" x="96" y="168" width="24" height="24"/>
+  <object id="466" type="brick" gid="1" x="120" y="168" width="24" height="24"/>
+  <object id="467" type="brick" gid="1" x="144" y="168" width="24" height="24"/>
+  <object id="468" type="brick" gid="1" x="168" y="168" width="24" height="24"/>
+  <object id="469" type="brick" gid="1" x="120" y="192" width="24" height="24"/>
+  <object id="470" type="brick" gid="1" x="120" y="216" width="24" height="24"/>
+  <object id="471" type="brick" gid="1" x="120" y="240" width="24" height="24"/>
+  <object id="472" type="brick" gid="1" x="120" y="264" width="24" height="24"/>
+  <object id="473" type="brick" gid="1" x="120" y="288" width="24" height="24"/>
+  <object id="474" type="brick" gid="1" x="264" y="168" width="24" height="24"/>
+  <object id="475" type="brick" gid="1" x="240" y="192" width="24" height="24"/>
+  <object id="476" type="brick" gid="1" x="216" y="216" width="24" height="24"/>
+  <object id="477" type="brick" gid="1" x="216" y="240" width="24" height="24"/>
+  <object id="478" type="brick" gid="1" x="216" y="264" width="24" height="24"/>
+  <object id="479" type="brick" gid="1" x="216" y="288" width="24" height="24"/>
+  <object id="480" type="brick" gid="1" x="240" y="240" width="24" height="24"/>
+  <object id="481" type="brick" gid="1" x="264" y="240" width="24" height="24"/>
+  <object id="482" type="brick" gid="1" x="288" y="240" width="24" height="24"/>
+  <object id="483" type="brick" gid="1" x="312" y="240" width="24" height="24"/>
+  <object id="484" type="brick" gid="1" x="312" y="216" width="24" height="24"/>
+  <object id="485" type="brick" gid="1" x="288" y="192" width="24" height="24"/>
+  <object id="486" type="brick" gid="1" x="312" y="264" width="24" height="24"/>
+  <object id="487" type="brick" gid="1" x="312" y="288" width="24" height="24"/>
+  <object id="488" type="brick" gid="1" x="360" y="168" width="24" height="24"/>
+  <object id="489" type="brick" gid="1" x="360" y="192" width="24" height="24"/>
+  <object id="490" type="brick" gid="1" x="360" y="216" width="24" height="24"/>
+  <object id="491" type="brick" gid="1" x="360" y="240" width="24" height="24"/>
+  <object id="492" type="brick" gid="1" x="360" y="264" width="24" height="24"/>
+  <object id="493" type="brick" gid="1" x="360" y="288" width="24" height="24"/>
+  <object id="494" type="brick" gid="1" x="384" y="264" width="24" height="24"/>
+  <object id="495" type="brick" gid="1" x="408" y="240" width="24" height="24"/>
+  <object id="496" type="brick" gid="1" x="432" y="216" width="24" height="24"/>
+  <object id="498" type="brick" gid="1" x="456" y="168" width="24" height="24"/>
+  <object id="499" type="brick" gid="1" x="456" y="192" width="24" height="24"/>
+  <object id="500" type="brick" gid="1" x="456" y="216" width="24" height="24"/>
+  <object id="501" type="brick" gid="1" x="456" y="240" width="24" height="24"/>
+  <object id="502" type="brick" gid="1" x="456" y="264" width="24" height="24"/>
+  <object id="503" type="brick" gid="1" x="456" y="288" width="24" height="24"/>
+  <object id="504" type="brick" gid="1" x="504" y="168" width="24" height="24"/>
+  <object id="505" type="brick" gid="1" x="504" y="192" width="24" height="24"/>
+  <object id="506" type="brick" gid="1" x="504" y="216" width="24" height="24"/>
+  <object id="507" type="brick" gid="1" x="504" y="240" width="24" height="24"/>
+  <object id="508" type="brick" gid="1" x="504" y="288" width="24" height="24"/>
+  <object id="509" type="brick" gid="1" x="504" y="264" width="24" height="24"/>
+  <object id="510" type="brick" gid="1" x="528" y="240" width="24" height="24"/>
+  <object id="511" type="brick" gid="1" x="528" y="216" width="24" height="24"/>
+  <object id="512" type="brick" gid="1" x="552" y="192" width="24" height="24"/>
+  <object id="513" type="brick" gid="1" x="576" y="168" width="24" height="24"/>
+  <object id="514" type="brick" gid="1" x="552" y="264" width="24" height="24"/>
+  <object id="515" type="brick" gid="1" x="576" y="288" width="24" height="24"/>
+  <object id="516" type="stone" gid="4" x="120" y="432" width="24" height="24"/>
+  <object id="517" type="stone" gid="4" x="96" y="432" width="24" height="24"/>
+  <object id="518" type="stone" gid="4" x="144" y="432" width="24" height="24"/>
+  <object id="519" type="stone" gid="4" x="504" y="432" width="24" height="24"/>
+  <object id="520" type="stone" gid="4" x="528" y="432" width="24" height="24"/>
+  <object id="521" type="stone" gid="4" x="552" y="432" width="24" height="24"/>
+  <object id="530" type="brick" gid="1" x="168" y="360" width="24" height="24"/>
+  <object id="531" type="brick" gid="1" x="192" y="360" width="24" height="24"/>
+  <object id="532" type="brick" gid="1" x="216" y="360" width="24" height="24"/>
+  <object id="533" type="brick" gid="1" x="240" y="360" width="24" height="24"/>
+  <object id="534" type="brick" gid="1" x="264" y="360" width="24" height="24"/>
+  <object id="535" type="brick" gid="1" x="312" y="360" width="24" height="24"/>
+  <object id="536" type="brick" gid="1" x="288" y="360" width="24" height="24"/>
+  <object id="537" type="brick" gid="1" x="336" y="360" width="24" height="24"/>
+  <object id="538" type="brick" gid="1" x="360" y="360" width="24" height="24"/>
+  <object id="539" type="brick" gid="1" x="384" y="360" width="24" height="24"/>
+  <object id="540" type="brick" gid="1" x="408" y="360" width="24" height="24"/>
+  <object id="541" type="brick" gid="1" x="456" y="360" width="24" height="24"/>
+  <object id="542" type="brick" gid="1" x="432" y="360" width="24" height="24"/>
+  <object id="543" type="brick" gid="1" x="480" y="360" width="24" height="24"/>
+  <object id="544" type="brick" gid="1" x="504" y="360" width="24" height="24"/>
+  <object id="545" type="brick" gid="1" x="528" y="360" width="24" height="24"/>
+  <object id="546" type="brick" gid="1" x="144" y="360" width="24" height="24"/>
+  <object id="547" type="brick" gid="1" x="216" y="408" width="24" height="24"/>
+  <object id="548" type="brick" gid="1" x="264" y="408" width="24" height="24"/>
+  <object id="549" type="brick" gid="1" x="312" y="408" width="24" height="24"/>
+  <object id="550" type="brick" gid="1" x="360" y="408" width="24" height="24"/>
+  <object id="551" type="brick" gid="1" x="408" y="408" width="24" height="24"/>
+  <object id="552" type="brick" gid="1" x="456" y="408" width="24" height="24"/>
+  <object id="554" type="brick" gid="1" x="144" y="336" width="24" height="24"/>
+  <object id="555" type="brick" gid="1" x="168" y="336" width="24" height="24"/>
+  <object id="556" type="brick" gid="1" x="192" y="336" width="24" height="24"/>
+  <object id="557" type="brick" gid="1" x="216" y="336" width="24" height="24"/>
+  <object id="558" type="brick" gid="1" x="240" y="336" width="24" height="24"/>
+  <object id="559" type="brick" gid="1" x="264" y="336" width="24" height="24"/>
+  <object id="560" type="brick" gid="1" x="288" y="336" width="24" height="24"/>
+  <object id="561" type="brick" gid="1" x="312" y="336" width="24" height="24"/>
+  <object id="562" type="brick" gid="1" x="336" y="336" width="24" height="24"/>
+  <object id="563" type="brick" gid="1" x="360" y="336" width="24" height="24"/>
+  <object id="564" type="brick" gid="1" x="384" y="336" width="24" height="24"/>
+  <object id="565" type="brick" gid="1" x="408" y="336" width="24" height="24"/>
+  <object id="566" type="brick" gid="1" x="432" y="336" width="24" height="24"/>
+  <object id="567" type="brick" gid="1" x="456" y="336" width="24" height="24"/>
+  <object id="568" type="brick" gid="1" x="480" y="336" width="24" height="24"/>
+  <object id="569" type="brick" gid="1" x="504" y="336" width="24" height="24"/>
+  <object id="570" type="brick" gid="1" x="528" y="336" width="24" height="24"/>
+  <object id="573" type="sea" x="528" y="528" width="24" height="24"/>
+  <object id="574" type="sea" x="504" y="528" width="24" height="24"/>
+  <object id="575" type="sea" x="552" y="528" width="24" height="24"/>
+  <object id="576" type="sea" x="576" y="528" width="24" height="24"/>
+  <object id="579" type="sea" x="528" y="552" width="24" height="24"/>
+  <object id="580" type="sea" x="552" y="552" width="24" height="24"/>
+  <object id="581" type="sea" x="576" y="552" width="24" height="24"/>
+  <object id="582" type="sea" x="504" y="552" width="24" height="24"/>
+  <object id="583" type="sea" x="504" y="576" width="24" height="24"/>
+  <object id="584" type="sea" x="528" y="576" width="24" height="24"/>
+  <object id="585" type="sea" x="552" y="576" width="24" height="24"/>
+  <object id="586" type="sea" x="576" y="576" width="24" height="24"/>
+  <object id="589" type="greens" gid="5" x="504" y="456" width="24" height="24"/>
+  <object id="590" type="greens" gid="5" x="528" y="456" width="24" height="24"/>
+  <object id="591" type="greens" gid="5" x="552" y="456" width="24" height="24"/>
+  <object id="592" type="greens" gid="5" x="504" y="480" width="24" height="24"/>
+  <object id="593" type="greens" gid="5" x="528" y="480" width="24" height="24"/>
+  <object id="594" type="greens" gid="5" x="552" y="480" width="24" height="24"/>
+  <object id="595" type="snow" gid="3" x="144" y="456" width="24" height="24"/>
+  <object id="596" type="snow" gid="3" x="120" y="456" width="24" height="24"/>
+  <object id="597" type="snow" gid="3" x="96" y="456" width="24" height="24"/>
+  <object id="598" type="snow" gid="3" x="96" y="480" width="24" height="24"/>
+  <object id="599" type="snow" gid="3" x="120" y="480" width="24" height="24"/>
+  <object id="600" type="snow" gid="3" x="144" y="480" width="24" height="24"/>
+  <object id="601" type="brick" gid="1" x="48" y="552" width="24" height="24"/>
+  <object id="602" type="brick" gid="1" x="72" y="552" width="24" height="24"/>
+  <object id="603" type="brick" gid="1" x="96" y="552" width="24" height="24"/>
+  <object id="604" type="brick" gid="1" x="120" y="552" width="24" height="24"/>
+  <object id="605" type="brick" gid="1" x="72" y="600" width="24" height="24"/>
+  <object id="606" type="brick" gid="1" x="96" y="600" width="24" height="24"/>
+  <object id="607" type="brick" gid="1" x="120" y="600" width="24" height="24"/>
+  <object id="608" type="brick" gid="1" x="144" y="600" width="24" height="24"/>
+  <object id="609" type="brick" gid="1" x="96" y="648" width="24" height="24"/>
+  <object id="610" type="brick" gid="1" x="120" y="648" width="24" height="24"/>
+  <object id="611" type="brick" gid="1" x="72" y="648" width="24" height="24"/>
+  <object id="612" type="brick" gid="1" x="48" y="600" width="24" height="24"/>
+  <object id="613" type="brick" gid="1" x="48" y="648" width="24" height="24"/>
+  <object id="614" type="brick" gid="1" x="144" y="552" width="24" height="24"/>
+  <object id="615" type="brick" gid="1" x="144" y="648" width="24" height="24"/>
+  <object id="616" type="brick" gid="1" x="96" y="576" width="24" height="24"/>
+  <object id="617" type="brick" gid="1" x="96" y="624" width="24" height="24"/>
+  <object id="618" type="brick" gid="1" x="72" y="576" width="24" height="24"/>
+  <object id="619" type="brick" gid="1" x="72" y="624" width="24" height="24"/>
+  <object id="620" type="brick" gid="1" x="120" y="576" width="24" height="24"/>
+  <object id="621" type="brick" gid="1" x="120" y="624" width="24" height="24"/>
+  <object id="622" type="brick" gid="1" x="48" y="576" width="24" height="24"/>
+  <object id="623" type="brick" gid="1" x="48" y="624" width="24" height="24"/>
+  <object id="624" type="brick" gid="1" x="144" y="576" width="24" height="24"/>
+  <object id="625" type="brick" gid="1" x="144" y="624" width="24" height="24"/>
+ </objectgroup>
+</map>
