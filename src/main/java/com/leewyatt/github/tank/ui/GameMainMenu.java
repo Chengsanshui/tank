@@ -62,10 +62,10 @@ public class GameMainMenu extends FXGLMenu {
 
         tt = new TranslateTransition(Duration.seconds(2), tankTexture);
         tt.setInterpolator(Interpolators.ELASTIC.EASE_OUT());
-        tt.setFromX(172);
-        tt.setFromY(252);
-        tt.setToX(374);
-        tt.setToY(252);
+        tt.setFromX(200);
+        tt.setFromY(200);
+        tt.setToX(350);
+        tt.setToY(230);
         tt.setOnFinished(e -> menuBox.setVisible(true));
 
         Rectangle bgRect = new Rectangle(getAppWidth(), getAppHeight());
@@ -74,7 +74,7 @@ public class GameMainMenu extends FXGLMenu {
         line.setStrokeWidth(2);
         Texture textureWall = texture("ui/fxgl.png");
         textureWall.setLayoutX(310);
-        textureWall.setLayoutY(600);
+        textureWall.setLayoutY(578);
 
         defaultPane = new Pane(bgRect, texture, tankTexture, menuBox, line, textureWall);
         getContentRoot().getChildren().setAll(defaultPane);
