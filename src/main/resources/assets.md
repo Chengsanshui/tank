@@ -1,4 +1,4 @@
-## 对于assets目录的说明
+## A description of the assets directory
 
 | Description of the assets subdirectory | Explain                                                                   | For instance            |
 |:---------------------------------------|:--------------------------------------------------------------------------|:------------------------|

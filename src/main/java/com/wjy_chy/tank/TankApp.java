@@ -53,15 +53,15 @@ public class TankApp extends GameApplication {
     private int[] enemySpawnX = {30, 295 + 30, 589 + 20};
 
     /**
-     * 基地加固定时器动作
+     * Base plus fixed timer action
      */
     private TimerAction spadeTimerAction;
     /**
-     * 敌军冻结计的定时器动作
+     * Timer action for enemy freeze gauges
      */
     private TimerAction freezingTimerAction;
     /**
-     * 定时刷新敌军坦克
+     * Refresh enemy tanks at regular intervals
      */
     private TimerAction spawnEnemyTimerAction;
 
@@ -74,40 +74,40 @@ public class TankApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
 
-        //设置界面的宽度,并且在右边加一个侧边栏
+        //Set the width of the interface and add a sidebar to the right
         settings.setWidth(28 * 24 + 6 * 24);
         settings.setHeight(28 * 24);
         settings.setTitle("2023 Tank");
 
-        //设置程序的图标
+        //Set the icon of the program
         settings.setAppIcon("ui/icon.png");
         settings.setVersion("Version 1.0");
         settings.setMainMenuEnabled(true);
         settings.setGameMenuEnabled(true);
         settings.getCSSList().add("tankApp.css");
 
-        //设置鼠标热点,和偏移量
+        //Set the mouse hotspot, and offset
         settings.setDefaultCursor(new CursorInfo("ui/cursor.png", 0, 0));
-        //FPS,CPU,RAM等信息的显示
+        //Display of FPS, CPU, RAM and other information
         //settings.setProfilingEnabled(true);
-        //开发模式.这样可以输出较多的日志异常追踪
+        //Development mode: This can output a large number of log exception traces
         //settings.setApplicationMode(ApplicationMode.DEVELOPER);
         settings.setSceneFactory(new SceneFactory() {
             @Override
             public StartupScene newStartup(int width, int height) {
-                //自定义启动场景
+                //Customize the startup scenario
                 return new GameStartupScene(width, height);
             }
 
             @Override
             public FXGLMenu newMainMenu() {
-                //主菜单场景
+                //Main menu scene
                 return new GameMainMenu();
             }
 
             @Override
             public LoadingScene newLoadingScene() {
-                //游戏前的加载场景
+                //Pre-game loading scene
                 return new GameLoadingScene();
             }
         });
@@ -128,7 +128,7 @@ public class TankApp extends GameApplication {
     }
 
     @Override
-    //设置玩家上下左右的移动和发射炮弹
+    //Set the player to move up, down, left, and right and fire cannonballs
     protected void initInput() {
         onKey(KeyCode.W, this::moveUpAction);
         onKey(KeyCode.UP, this::moveUpAction);
@@ -201,13 +201,16 @@ public class TankApp extends GameApplication {
     }
 
     public void buildAndStartLevel() {
-        //1. 清理上一个关卡的残留(这里主要是清理声音残留)
-        //清理关卡的残留(这里主要是清理声音残留)
+        //1. Clean up the remnants of the previous level
+        // (here the main thing is to clean up the sound residues)
+
+        //Clean up the remnants of the level
+        // (here the main thing is to clean up the sound residue)
         getGameWorld().getEntitiesByType(
                 GameType.BULLET, GameType.ENEMY, GameType.PLAYER
         ).forEach(Entity::removeFromWorld);
 
-        //2. 开场动画
+        //2. Opening animation
         Rectangle rect1 = new Rectangle(getAppWidth(), getAppHeight() / 2.0, Color.web("#333333"));
         Rectangle rect2 = new Rectangle(getAppWidth(), getAppHeight() / 2.0, Color.web("#333333"));
         rect2.setLayoutY(getAppHeight() / 2.0);
@@ -231,7 +234,7 @@ public class TankApp extends GameApplication {
         pt.setOnFinished(e -> {
             text.setVisible(false);
             tl.play();
-            //3. 开始新关卡
+            //3. Start a new level
             startLevel();
         });
         pt.play();
@@ -243,16 +246,16 @@ public class TankApp extends GameApplication {
             spawnEnemyTimerAction = null;
         }
         set("gameOver", false);
-        //清除上一关残留的道具影响
+        //Clear the remaining item effects from the previous level
         set("freezingEnemy", false);
-        //恢复消灭敌军数量
+        //Restore the number of enemy troops destroyed
         set("destroyedEnemy", 0);
-        //恢复生成敌军的数量
+        //Restores the number of enemy troops that spawn
         set("spawnedEnemy", 0);
 
         expireAction(freezingTimerAction);
         expireAction(spadeTimerAction);
-        //如果关卡是 0 ,那么从用户自定义地图开始游戏
+        //If the level is 0, start the game with a user-defined map
        if (geti("level")==0){
            Level level;
            try {
@@ -268,12 +271,12 @@ public class TankApp extends GameApplication {
         play("start.wav");
         player = null;
         player = spawn("player", 9 * 24 + 3, 25 * 24);
-        //每局开始玩家坦克都有无敌保护时间
+        //At the beginning of each round, the player's tank has an invincibility protection time
         player.getComponent(EffectComponent.class).startEffect(new HelmetEffect());
         playerComponent = player.getComponent(PlayerComponent.class);
-        //显示信息的UI
+        //A UI that displays information
         getGameScene().addGameView(new GameView(new InfoPane(), 100));
-        //首先产生几个敌方坦克
+        //Start by spawning a few enemy tanks
         for (int i = 0; i < enemySpawnX.length; i++) {
             spawn("enemy",
                     new SpawnData(enemySpawnX[i], 30).put("assentName", "tank/E" + FXGLMath.random(1, 12) + "U.png"));
@@ -287,29 +290,32 @@ public class TankApp extends GameApplication {
             spawnEnemyTimerAction.expire();
             spawnEnemyTimerAction = null;
         }
-        //用于检测碰撞的实体(避免坦克一产生就和其他坦克发生碰撞,"纠缠到一起")
+        //Entities used to detect collisions
+        // (to prevent tanks from colliding with other tanks as soon as they are created, "getting entangled")
         Entity spawnBox = spawn("spawnBox", new SpawnData(-100, -100));
 
-        //用于产生敌人的定时器, 定期尝试产生敌军坦克, 但是如果生成敌军坦克的位置,被其他现有的坦克占据, 那么此次就不生成敌军坦克
+        //A timer used to spawn enemies, which periodically attempts to spawn enemy tanks,
+        // but if the location of the enemy tank is occupied by other existing tanks, then the enemy tank will not spawn this time
         spawnEnemyTimerAction = run(() -> {
-            //尝试产生敌军坦克的次数; 2次或者3次
+            //the number of attempts to spawn enemy tanks; 2 or 3 times
             int testTimes = FXGLMath.random(2, 3);
             for (int i = 0; i < testTimes; i++) {
                 if (geti("spawnedEnemy") < GameConfig.ENEMY_AMOUNT) {
                     boolean canGenerate = true;
-                    //随机抽取数组的一个x坐标
+                    //One x coordinate of the array is randomly drawn
                     int x = enemySpawnX[random.nextInt(3)];
                     int y = 30;
                     spawnBox.setPosition(x, y);
                     List<Entity> tankList = getGameWorld().getEntitiesByType(GameType.ENEMY, GameType.PLAYER);
-                    //如果即将产生的敌军坦克位置和 目前已有的坦克位置冲突, 那么此处就不产生坦克
+                    //If the position of the enemy tank that is about to spawn conflicts with the position of the existing tank,
+                    // then no tank will be created here
                     for (Entity tank : tankList) {
                         if (tank.isActive() && spawnBox.isColliding(tank)) {
                             canGenerate = false;
                             break;
                         }
                     }
-                    //如果可以产生敌军坦克,那么生成坦克
+                    //If you can spawn enemy tanks, then spawn tanks
                     if (canGenerate) {
                         inc("spawnedEnemy", 1);
                         spawn("enemy",
@@ -351,36 +357,38 @@ public class TankApp extends GameApplication {
 
     public void spadeBackUpBase() {
         expireAction(spadeTimerAction);
-        //升级基地周围为石头墙
+        //The upgrade base is surrounded by stone walls
         updateWall(true);
         spadeTimerAction = runOnce(() -> {
-            //基地周围的墙,还原成砖头墙
+            //The walls around the base are reduced to brick walls
             updateWall(false);
         }, GameConfig.SPADE_TIME);
     }
     /**
-     * 基地四周的防御
-     * 按照游戏规则: 默认是砖头墙, 吃了铁锨后,升级成为石头墙;
+     * Defenses around the base
+     * According to the rules of the game: the default is a brick wall, and after eating the shovel,
+     * it will be upgraded to a stone wall;
      */
     private void updateWall(boolean isStone) {
-        //循环找到包围基地周围的墙
+        //Cycle through the walls surrounding the base
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 4; col++) {
                 if (row != 0 && (col == 1 || col == 2)) {
                     continue;
                 }
-                //删除旧的墙
+                //Delete the old wall
                 List<Entity> entityTempList = getGameWorld().getEntitiesAt(new Point2D(288 + col * 24, 576 + row * 24));
                 for (Entity entityTemp : entityTempList) {
                     Serializable type = entityTemp.getType();
-                    //如果是玩家自建的地图, 那么需要判断是不是水面草地雪地等
+                    //If it is a player-built map, then you need to determine whether it is water,
+                    // grass, snow, etc
                     if (type == GameType.STONE || type == GameType.BRICK || type == GameType.SNOW || type == GameType.SEA || type == GameType.GREENS) {
                         if (entityTemp.isActive()) {
                             entityTemp.removeFromWorld();
                         }
                     }
                 }
-                //创建新的墙
+                //Create a new wall
                 if (isStone) {
                     spawn("itemStone", new SpawnData(288 + col * 24, 576 + row * 24));
                 } else {
@@ -391,7 +399,7 @@ public class TankApp extends GameApplication {
     }
 
     /**
-     * 让TimeAction过期
+     * Let the Time Action expire
      */
     public void expireAction(TimerAction action) {
         if (action == null) {
