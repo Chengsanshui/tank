@@ -39,7 +39,7 @@
                     <launcher>Tank</launcher>
                     <jlinkImageName>Tank</jlinkImageName>
                     <jlinkZipName>TankZip</jlinkZipName>
-                    <mainClass>com.leewyatt.github.tank.TankApp</mainClass>
+                    <mainClass>com.wjy_chy.tank.TankApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
